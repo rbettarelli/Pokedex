@@ -63,8 +63,11 @@ modalClose.addEventListener("click", () => {
 });
 
 // ...
-pokemonList.addEventListener("click", (e) => {
-  const selectedPokemon = e.target.closest(".pokemon");
+pokemonList.addEventListener("click", openModal)
+
+  
+  function openModal(e) {
+    const selectedPokemon = e.target.closest(".pokemon");
   if (selectedPokemon) {
     const clickedPokemonId = parseInt(selectedPokemon.id, 10);
     const clickedPokemon = pokemonsData.find(
@@ -126,4 +129,8 @@ pokemonList.addEventListener("click", (e) => {
       );
     }
   }
-});
+};
+
+
+  
+  
