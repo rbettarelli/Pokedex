@@ -3,6 +3,8 @@ const loadMoreBtn = document.getElementById("loadMoreBtn");
 const limit = 10;
 let offset = 0;
 
+const maxRecords = 151
+
 function upperCaseFirst(string) {
   return string[0].toUpperCase() + string.substring(1);
 }
@@ -39,5 +41,14 @@ loadPokemonItem(offset, limit);
 
 loadMoreBtn.addEventListener("click", () => {
   offset += limit;
-  loadPokemonItem(offset, limit);
+  const qtdRecordsWithNexPage = offset + limit
+
+    if (qtdRecordsWithNexPage >= maxRecords) {
+        const newLimit = maxRecords - offset
+        loadPokemonItem(offset, newLimit)
+
+        loadMoreBtn.parentElement.removeChild(loadMoreBtn)
+    } else {
+        loadPokemonItem(offset, limit)
+    }
 });
