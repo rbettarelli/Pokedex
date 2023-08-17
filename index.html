@@ -24,13 +24,24 @@
     <section class="content">
       <h1>Pokédex</h1>
 
-      <ol id="pokemonList"class="pokemons">
-        
-      </ol>
+      <ol id="pokemonList" class="pokemons"></ol>
       <div class="pagination">
-        <button class="LoadMoreBtn" id="loadMoreBtn" type="button">Load More</button>
+        <button class="LoadMoreBtn" id="loadMoreBtn" type="button">
+          Load More
+        </button>
       </div>
     </section>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="modalClose" class="close">Close</span>
+
+        <h2>Pokémon Details</h2>
+
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
     <script src="./assets/js/pokemon-model.js"></script>
     <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/index.js"></script>

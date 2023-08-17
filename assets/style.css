@@ -5,6 +5,7 @@
 
 body {
   background-color: #f6f8fc;
+  text-transform: capitalize;
 }
 
 .content {
@@ -24,22 +25,39 @@ body {
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 
-.LoadMoreBtn {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
-    color: #fff;
-    background-color: #6c79db;
-    border: none;
-    border-radius: 1rem;
+.LoadMoreBtn,
+.close {
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+  font-size: 0.625rem;
+  color: #fff;
+  background-color: #6c79db;
+  border: none;
+  border-radius: 1rem;
+  
+}
+.LoadMoreBtn,
+.close:hover{
+    cursor: pointer;
+}
 
+.progress-bar.green {
+  background: linear-gradient(to left, #00ff00, #ffff00);
+}
+
+.progress-bar.yellow {
+  background: linear-gradient(to left, #ffff00, #ff0000);
+}
+
+.progress-bar.red {
+  background: #ff0000;
 }
 
 .pokemons {
@@ -58,6 +76,7 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .pokemon .number {
@@ -84,13 +103,13 @@ body {
 }
 
 .pokemon .detail .types .type {
-    color: #fff;
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
-    border-radius: 1rem;
-    filter: brightness(1.1);
-    text-align: center;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+  font-size: 0.625rem;
+  border-radius: 1rem;
+  filter: brightness(1.1);
+  text-align: center;
 }
 .pokemon .detail img {
   max-width: 100%;
@@ -185,4 +204,68 @@ body {
   .pokemons {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+.progress {
+  width: 50%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+
+  /* Cor da barra de progresso */
+}
+#stats-list {
+  list-style: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999; /* Defina um valor alto para garantir que o modal esteja na frente do conteúdo */
+}
+
+.modal-content {
+  text-align: center;
+  background-color: #dcdee1;
+  min-width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Ajuste a largura máxima conforme necessário */
+}
+.modalPhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+.modalPhoto img {
+  max-width: 270px;
+  max-height: 280px;
+  text-align: center;
+}
+.modalInfo p {
+ text-align: left;
+  margin: 0;
+  padding: 1px;
+}
+#stats-list {
+    text-align: left;
 }
